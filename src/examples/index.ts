@@ -1,4 +1,4 @@
-import { discordStatus } from "..";
+import discordStatus from "..";
 
 (async() => {
     await discordStatus.getStatus().then((result) => {
