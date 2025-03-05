@@ -34,7 +34,7 @@ export const getStatus = async (): Promise<getStatusResult> => {
             }
         }).then((response) => {
             if (response.status !== 200) {
-                reject({
+                return reject({
                     status: "error",
                     message: response.statusText
                 });
@@ -42,7 +42,7 @@ export const getStatus = async (): Promise<getStatusResult> => {
             resData = response.data;
         }).catch((e) => {
             if (e instanceof Error) {
-                reject({
+                return reject({
                     status: "error",
                     message: e.message
                 });
