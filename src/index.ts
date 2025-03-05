@@ -1,2 +1,3 @@
 import { getStatus } from "./utils/getStatus";
-export const discordStatus = { getStatus };
+const discordStatus = { getStatus };
+export default discordStatus;
