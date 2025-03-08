@@ -11,7 +11,7 @@ import json from "../contents/json";
  * @returns {Promise<object>} - Discord status results.
  */
 export const getStatus = async (): Promise<getStatusResult> => {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async (resolve) => {
         let resData: any;
         await Axios(json.status, {
             method: "GET",
@@ -34,7 +34,7 @@ export const getStatus = async (): Promise<getStatusResult> => {
             }
         }).then((response) => {
             if (response.status !== 200) {
-                return reject({
+                return resolve({
                     status: "error",
                     message: response.statusText
                 });
@@ -42,7 +42,7 @@ export const getStatus = async (): Promise<getStatusResult> => {
             resData = response.data;
         }).catch((e) => {
             if (e instanceof Error) {
-                return reject({
+                return resolve({
                     status: "error",
                     message: e.message
                 });
