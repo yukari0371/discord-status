@@ -1,10 +1,10 @@
 # discord-status
 Get information about discord status.
 
-### Usage
-### Example
+###Usage
+###Example
 ```ts
-import discordStatus from "..";
+import { discordStatus } from "..";
 
 (async() => {
     await discordStatus.getStatus().then((result) => {
@@ -20,7 +20,7 @@ import discordStatus from "..";
 })();
 ```
 
-### Result
+###Result
 ```
 {
   status: 'success',
