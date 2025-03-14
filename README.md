@@ -1,8 +1,6 @@
 # discord-status
 Get information about discord status.
-
 ### Usage
-### Example
 ```ts
 import { discordStatus } from "..";
 
